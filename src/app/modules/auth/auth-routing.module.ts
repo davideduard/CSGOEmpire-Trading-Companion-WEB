@@ -7,6 +7,11 @@ const routes: Routes = [
 		path: 'login',
 		component: LoginContainer,
 		pathMatch: 'full'
+	},
+	{
+		path: '',
+		redirectTo: 'login',
+		pathMatch: 'full'
 	}
 ];
 

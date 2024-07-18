@@ -7,7 +7,10 @@ import * as fromComponents from './components';
 import * as fromContainers from './containers';
 
 import { AuthLayoutComponent } from '../../layouts';
-import { TextFieldComponent } from '../../shared/components/text-field/text-field.component';
+import { TextFieldComponent } from '../../shared/components';
+import { FlatButtonComponent } from '../../shared/components';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [...fromComponents.components, ...fromContainers.containers],
@@ -15,7 +18,9 @@ import { TextFieldComponent } from '../../shared/components/text-field/text-fiel
 		CommonModule,
 		AuthRoutingModule,
 		AuthLayoutComponent,
-		TextFieldComponent
+		TextFieldComponent,
+		FlatButtonComponent,
+		FormsModule
 	]
 })
 export class AuthModule {}

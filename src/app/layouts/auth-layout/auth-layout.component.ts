@@ -21,7 +21,7 @@ import { CommonModule } from '@angular/common';
 
 			<!--Form Fields-->
 			<div
-				class="flex flex-col items-center absolute gap-2 top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/3"
+				class="flex flex-col items-center absolute gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] "
 			>
 				<ng-content></ng-content>
 			</div>

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
 	selector: 'app-text-field',
@@ -10,13 +11,48 @@ import { MatInputModule } from '@angular/material/input';
 		<div class="w-96">
 			<mat-form-field appearance="fill">
 				<mat-label>{{ label }}</mat-label>
-				<input type="{{ type }}" matInput />
+				<input
+					type="{{ type }}"
+					matInput
+					[value]="value"
+					(input)="onInput($event)"
+				/>
 			</mat-form-field>
 		</div>
 	`,
-	styleUrls: ['./text-field.component.scss']
+	styleUrls: ['./text-field.component.scss'],
+	providers: [
+		{
+			provide: NG_VALUE_ACCESSOR,
+			useExisting: TextFieldComponent,
+			multi: true
+		}
+	]
 })
-export class TextFieldComponent {
+export class TextFieldComponent implements ControlValueAccessor {
 	@Input() label = '';
-	@Input() type = 'username';
+	@Input() type = 'text';
+
+	value: string = '';
+
+	onChange = (value: any) => {};
+	onTouched = () => {};
+
+	writeValue(value: any): void {
+		this.value = value;
+	}
+
+	registerOnChange(fn: any): void {
+		this.onChange = fn;
+	}
+
+	registerOnTouched(fn: any): void {
+		this.onTouched = fn;
+	}
+
+	onInput(event: Event): void {
+		const input = event.target as HTMLInputElement;
+		this.value = input.value;
+		this.onChange(this.value);
+	}
 }
