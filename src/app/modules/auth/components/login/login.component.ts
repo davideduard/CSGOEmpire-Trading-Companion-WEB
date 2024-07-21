@@ -4,10 +4,11 @@ import { User } from '../../types';
 @Component({
 	selector: 'app-login',
 	template: ` <app-auth-layout>
-		<div class="flex flex-col gap-16 items-center mt-16">
-			<h1 class="text-white text-[52px] tracking-wide font-primary">Log in</h1>
+		<div class="flex flex-col gap-16 items-center">
+			<h1 class="text-white text-3xl tracking-wide font-primary">Log in</h1>
 			<div class="w-96 flex flex-col items-center">
 				<app-text-field
+					#usernameField
 					[(ngModel)]="username"
 					label="username"
 					name="username"
@@ -25,6 +26,7 @@ import { User } from '../../types';
 						label="login"
 						[isLoading]="isLoading"
 						(click)="onLogin()"
+						(keyup.enter)="onLogin()"
 					></app-flat-button>
 				</div>
 			</div>
