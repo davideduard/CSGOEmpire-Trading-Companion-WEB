@@ -10,11 +10,11 @@ import { LoginResponse } from '../types/login-response.type';
 export class AuthService {
 	constructor(private authRepository: AuthRepository) {}
 
-	login(username: string, password: string): Observable<LoginResponse> {
+	public login(username: string, password: string): Observable<LoginResponse> {
 		return this.authRepository.login(username, password);
 	}
 
-	isLoggedIn(): boolean {
+	public isLoggedIn(): boolean {
 		return this.authRepository.isLoggedIn();
 	}
 }

@@ -3,6 +3,7 @@ import { AuthService } from '../../services';
 import { User } from '../../types';
 import { LoginResponse } from '../../types/login-response.type';
 import { Router } from '@angular/router';
+import { RoutingService } from '../../../../services';
 
 @Component({
 	selector: 'app-login-container',
@@ -19,20 +20,21 @@ export class LoginContainer {
 		private router: Router
 	) {}
 
-	onLogin(user: User): void {
+	public onLogin(user: User): void {
 		this.isLoading = true;
-		this.authService.login(user.username, user.password).subscribe(
-			(response: LoginResponse) => {
+		this.authService.login(user.username, user.password).subscribe({
+			next: (response: LoginResponse) => {
 				if (response.token) {
-					const token: string = response.token;
+					const token = response.token;
 					localStorage.setItem('auth-token', token);
 					this.router.navigate(['/']);
 					this.isLoading = false;
 				}
 			},
-			error => {
+			error: err => {
 				console.log('err');
+				this.isLoading = false;
 			}
-		);
+		});
 	}
 }

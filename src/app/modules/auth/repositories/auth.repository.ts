@@ -12,7 +12,7 @@ export class AuthRepository {
 
 	constructor(private httpClient: HttpClient) {}
 
-	login(username: string, password: string): Observable<LoginResponse> {
+	public login(username: string, password: string): Observable<LoginResponse> {
 		const requestData = { username: username, password: password };
 		return this.httpClient.post<LoginResponse>(
 			`${this.apiUrl}/login`,
@@ -20,7 +20,7 @@ export class AuthRepository {
 		);
 	}
 
-	isLoggedIn(): boolean {
+	public isLoggedIn(): boolean {
 		return localStorage.getItem('auth-token') != null;
 	}
 }

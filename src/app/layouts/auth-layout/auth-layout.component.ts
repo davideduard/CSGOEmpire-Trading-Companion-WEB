@@ -6,13 +6,15 @@ import { CommonModule } from '@angular/common';
 	standalone: true,
 	imports: [CommonModule],
 	template: `
-		<div class="w-full h-full bg-darkBlue relative">
-			<div class="flex flex-col gap-3 pt-20">
-				<p class="text-2xl text-yellow self-center font-primary">
+		<div
+			class="w-full h-full bg-darkBlue relative font-primary flex flex-col justify-between"
+		>
+			<div class="flex flex-col justify-between gap-3 pt-20">
+				<p class="text-4xl text-yellow self-center font-primary">
 					EmpireTrader Companion
 				</p>
 				<p
-					class="text-xs text-white text-opacity-30 self-center text-center font-primary"
+					class="text-md text-white text-opacity-30 self-center text-center font-primary"
 				>
 					Your first automated trading app to keep <br />
 					easy track of your profits!
@@ -20,17 +22,13 @@ import { CommonModule } from '@angular/common';
 			</div>
 
 			<!--Form Fields-->
-			<div
-				class="flex flex-col items-center absolute gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] "
-			>
+			<div class="flex flex-col items-center gap-2 pb-16 pt-2">
 				<ng-content></ng-content>
 			</div>
 
-			<div
-				class="flex flex-col absolute bottom-0 mb-10 left-1/2 -translate-x-1/2"
-			>
+			<div class="flex flex-col">
 				<p
-					class="text-white text-opacity-30 self-center text-center font-primary"
+					class="text-white text-opacity-30 text-md self-center text-center font-primary pb-5"
 				>
 					You don't have an account already? <br />
 					Click
