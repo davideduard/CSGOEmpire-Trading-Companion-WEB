@@ -19,11 +19,17 @@ module.exports = {
         DEFAULT: '#e9b10e',
         dark: '#d29f0d',
         darkest: '#ba8e0b'
+      },
+      'transparent': {
+        DEFAULT: 'transparent'
       }
     },
     extend: {
       fontFamily: {
         'primary' : ['Nunito']
+      },
+      width: {
+        '96': '32rem'
       }
     },
   },
