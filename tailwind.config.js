@@ -7,6 +7,7 @@ module.exports = {
         DEFAULT: '#00AE58'
       },
       'darkBlue': {
+        lightest: '#24252F',
         light: '#1F2029',
         DEFAULT: '#1A1C24'
       },
@@ -22,6 +23,9 @@ module.exports = {
       },
       'transparent': {
         DEFAULT: 'transparent'
+      },
+      'gray': {
+        DEFAULT: '#D9D9D9'
       }
     },
     extend: {

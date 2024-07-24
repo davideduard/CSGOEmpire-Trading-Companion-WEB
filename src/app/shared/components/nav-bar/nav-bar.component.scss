@@ -1,0 +1,28 @@
+.nav-bar {
+  @apply h-16 flex items-center justify-end p-16 pr-20
+}
+
+.nav-list {
+  @apply flex flex-row gap-16
+}
+
+.nav-item {
+  @apply text-opacity-30 text-white font-primary text-xl relative
+}
+
+.nav-item:hover {
+  @apply cursor-pointer text-opacity-70
+}
+
+.nav-item:hover::after {
+  @apply w-full
+}
+
+.nav-item::after {
+  @apply content-[''] bg-yellow h-0.5 w-0 absolute left-0 -bottom-1 rounded-lg duration-300
+}
+
+.active-route {
+  @apply text-white hover:text-opacity-100
+}
+

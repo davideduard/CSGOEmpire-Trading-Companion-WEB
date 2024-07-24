@@ -3,7 +3,6 @@ import { AuthService } from '../../services';
 import { User } from '../../types';
 import { LoginResponse } from '../../types/login-response.type';
 import { Router } from '@angular/router';
-import { RoutingService } from '../../../../services';
 
 @Component({
 	selector: 'app-login-container',
