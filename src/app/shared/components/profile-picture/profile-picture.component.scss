@@ -1,0 +1,7 @@
+.profile {
+  @apply w-14 h-14 bg-darkBlue-lightest ml-16 rounded-full flex items-center justify-center text-xl text-white text-opacity-80 font-primary font-bold
+}
+
+.profile:hover {
+  @apply cursor-pointer
+}

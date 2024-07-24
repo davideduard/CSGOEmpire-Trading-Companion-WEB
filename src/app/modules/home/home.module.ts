@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 
+import * as fromComponents from './components';
+import * as fromContainers from './containers';
 
+import { NavBarComponent } from '../../shared/components';
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    HomeRoutingModule
-  ]
+	declarations: [...fromComponents.components, ...fromContainers.containers],
+	imports: [CommonModule, HomeRoutingModule, NavBarComponent]
 })
-export class HomeModule { }
+export class HomeModule {}
