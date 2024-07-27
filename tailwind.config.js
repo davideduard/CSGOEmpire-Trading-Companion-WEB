@@ -29,6 +29,20 @@ module.exports = {
       }
     },
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': {opacity: 0, transform: 'translate(0, 2%)'},
+          '100%': {opacity: 1, transform: 'translate(0, 0)'}
+        },
+        fadeOut: {
+          '0%': {opacity: 1, transform: 'translate(0, 0)'},
+          '100%': {opacity: 0, transform: 'translate(0, 10%)'}
+        }
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-in-out forwards',
+        fadeOut: 'fadeOut 0.2s ease-out forwards'
+      },
       fontFamily: {
         'primary' : ['Nunito']
       },

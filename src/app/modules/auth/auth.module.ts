@@ -11,16 +11,25 @@ import { TextFieldComponent } from '../../shared/components';
 import { FlatButtonComponent } from '../../shared/components';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LogoutComponent } from './components/logout/logout.component';
+import { LogoutContainer } from './containers';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-	declarations: [...fromComponents.components, ...fromContainers.containers],
+	declarations: [
+		...fromComponents.components,
+		...fromContainers.containers,
+		LogoutComponent
+	],
+	exports: [LogoutContainer],
 	imports: [
 		CommonModule,
 		AuthRoutingModule,
 		AuthLayoutComponent,
 		TextFieldComponent,
 		FlatButtonComponent,
-		FormsModule
+		FormsModule,
+		MatIconModule
 	]
 })
 export class AuthModule {}

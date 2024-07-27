@@ -23,4 +23,8 @@ export class AuthRepository {
 	public isLoggedIn(): boolean {
 		return localStorage.getItem('auth-token') != null;
 	}
+
+	public logOut(): void {
+		localStorage.removeItem('auth-token');
+	}
 }

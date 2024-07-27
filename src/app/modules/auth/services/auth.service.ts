@@ -17,4 +17,8 @@ export class AuthService {
 	public isLoggedIn(): boolean {
 		return this.authRepository.isLoggedIn();
 	}
+
+	public logOut(): void {
+		this.authRepository.logOut();
+	}
 }

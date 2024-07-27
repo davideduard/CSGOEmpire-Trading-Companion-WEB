@@ -38,8 +38,8 @@ export class LoginComponent {
 	username: string = '';
 	password: string = '';
 
-	@Input() isLoading = false;
-	@Output() loginRequested = new EventEmitter<User>();
+	@Input() isLoading: boolean = false;
+	@Output() loginRequested: EventEmitter<User> = new EventEmitter<User>();
 
 	onLogin(): void {
 		this.loginRequested.emit({

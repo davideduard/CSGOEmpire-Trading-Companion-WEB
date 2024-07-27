@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { IconRegistryService } from './services';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -16,7 +17,17 @@ import { FormsModule } from '@angular/forms';
 		BrowserAnimationsModule,
 		HttpClientModule
 	],
-	providers: [],
+	providers: [
+		IconRegistryService,
+		{
+			provide: APP_INITIALIZER,
+			useFactory: (iconRegistryService: IconRegistryService) => () =>
+				iconRegistryService.registerCustomIcons(),
+			deps: [IconRegistryService],
+			multi: true
+		}
+	],
+	exports: [],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

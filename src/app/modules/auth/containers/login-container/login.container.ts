@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 		<app-login [isLoading]="isLoading" (loginRequested)="onLogin($event)">
 		</app-login>
 	`,
-	styleUrls: ['./login-container.component.scss']
+	styleUrls: ['./login.container.scss']
 })
 export class LoginContainer {
 	isLoading: boolean = false;

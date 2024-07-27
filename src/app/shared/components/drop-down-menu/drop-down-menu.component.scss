@@ -1,0 +1,28 @@
+
+.drop-down-menu-hidden {
+  @apply w-44 bg-darkBlue-lightest absolute ml-1 mt-5 rounded-xl animate-fadeIn
+}
+
+.drop-down-menu-shown {
+  @apply w-44 bg-darkBlue-lightest absolute ml-1 mt-5 rounded-xl animate-fadeOut
+}
+
+.triangle {
+  @apply w-6 h-6 absolute left-1/2 -translate-x-1/2 -top-2 rotate-45 bg-darkBlue-lightest z-[-1]
+}
+
+.menu-item {
+  @apply p-2 text-white w-full font-primary text-lg flex items-center justify-center gap-3
+}
+
+.menu-item:hover {
+  @apply bg-darkBlue-light
+}
+
+.menu-first-element {
+  @apply rounded-t-xl
+}
+
+.menu-last-element {
+  @apply rounded-b-xl
+}
