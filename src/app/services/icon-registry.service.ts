@@ -20,6 +20,13 @@ export class IconRegistryService {
 		);
 
 		this.matIconRegistry.addSvgIcon(
+			'icon',
+			this.domSanitizer.bypassSecurityTrustResourceUrl(
+				'/assets/icons/tradeicon.svg'
+			)
+		);
+
+		this.matIconRegistry.addSvgIcon(
 			'profile',
 			this.domSanitizer.bypassSecurityTrustResourceUrl(
 				'/assets/icons/profile.svg'

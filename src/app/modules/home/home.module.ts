@@ -11,6 +11,7 @@ import { CardComponent } from '../../shared/components';
 
 @NgModule({
 	declarations: [...fromComponents.components, ...fromContainers.containers],
+
 	imports: [
 		CommonModule,
 		HomeRoutingModule,
