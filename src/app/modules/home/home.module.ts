@@ -7,8 +7,14 @@ import * as fromComponents from './components';
 import * as fromContainers from './containers';
 
 import { NavBarComponent } from '../../shared/components';
+import { HomeLayoutComponent } from '../../layouts';
 @NgModule({
 	declarations: [...fromComponents.components, ...fromContainers.containers],
-	imports: [CommonModule, HomeRoutingModule, NavBarComponent]
+	imports: [
+		CommonModule,
+		HomeRoutingModule,
+		NavBarComponent,
+		HomeLayoutComponent
+	]
 })
 export class HomeModule {}
