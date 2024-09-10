@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 		>
 			<div class="flex flex-col justify-between gap-3 pt-20">
 				<p class="text-4xl text-yellow self-center font-primary">
-					EmpireTrader Companion
+					EmpireTrader <span class="text-white">Companion</span>
 				</p>
 				<p
 					class="text-md text-white text-opacity-30 self-center text-center font-primary"
