@@ -7,7 +7,11 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'app-login-container',
 	template: `
-		<app-login [isLoading]="isLoading" (loginRequested)="onLogin($event)">
+		<app-login
+			[isLoading]="isLoading"
+			(loginRequested)="onLogin($event)"
+			(registerRequested)="onRegister()"
+		>
 		</app-login>
 	`,
 	styleUrls: ['./login.container.scss']
@@ -35,5 +39,9 @@ export class LoginContainer {
 				this.isLoading = false;
 			}
 		});
+	}
+
+	public onRegister(): void {
+		this.router.navigate(['/auth/register']);
 	}
 }

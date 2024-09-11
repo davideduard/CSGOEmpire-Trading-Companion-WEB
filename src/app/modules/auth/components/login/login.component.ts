@@ -4,7 +4,7 @@ import { User } from '../../types';
 @Component({
 	selector: 'app-login',
 	template: ` <app-auth-layout>
-		<div class="flex flex-col gap-16 items-center">
+		<div class="flex flex-col gap-16 items-center" id="form-fields">
 			<h1 class="text-white text-3xl tracking-wide font-primary">Log in</h1>
 			<div class="w-96 flex flex-col items-center">
 				<app-text-field
@@ -31,6 +31,18 @@ import { User } from '../../types';
 				</div>
 			</div>
 		</div>
+
+		<p
+			class="text-white text-opacity-30 text-md self-center text-center font-primary pb-5"
+			id="footer"
+		>
+			You don't have an account already? <br />
+			Click
+			<u class="text-yellow hover:cursor-pointer" (click)="onRegister()">
+				here</u
+			>
+			to sign-up
+		</p>
 	</app-auth-layout>`,
 	styleUrls: ['./login.component.scss']
 })
@@ -40,11 +52,16 @@ export class LoginComponent {
 
 	@Input() isLoading: boolean = false;
 	@Output() loginRequested: EventEmitter<User> = new EventEmitter<User>();
+	@Output() registerRequested: EventEmitter<void> = new EventEmitter<void>();
 
 	onLogin(): void {
 		this.loginRequested.emit({
 			username: this.username,
 			password: this.password
 		});
+	}
+
+	onRegister(): void {
+		this.registerRequested.emit();
 	}
 }

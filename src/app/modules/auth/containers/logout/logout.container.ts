@@ -15,7 +15,6 @@ export class LogoutContainer {
 
 	public onLogout(): void {
 		this.authService.logOut();
-		console.log('logging out');
 		this.router.navigate(['/auth/login']);
 	}
 }
