@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginContainer } from './containers';
+import { LoginContainer, RegisterContainer } from './containers';
 
 const routes: Routes = [
 	{
 		path: 'login',
 		component: LoginContainer,
+		pathMatch: 'full'
+	},
+	{
+		path: 'register',
+		component: RegisterContainer,
 		pathMatch: 'full'
 	},
 	{

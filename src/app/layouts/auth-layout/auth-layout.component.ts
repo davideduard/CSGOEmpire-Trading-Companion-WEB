@@ -23,18 +23,11 @@ import { CommonModule } from '@angular/common';
 
 			<!--Form Fields-->
 			<div class="flex flex-col items-center gap-2 pb-16 pt-2">
-				<ng-content></ng-content>
+				<ng-content select="#form-fields"></ng-content>
 			</div>
 
 			<div class="flex flex-col">
-				<p
-					class="text-white text-opacity-30 text-md self-center text-center font-primary pb-5"
-				>
-					You don't have an account already? <br />
-					Click
-					<u class="text-yellow hover:cursor-pointer"> here</u>
-					to sign-up
-				</p>
+				<ng-content select="#footer"></ng-content>
 			</div>
 		</div>
 	`,
