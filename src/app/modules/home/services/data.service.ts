@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../../auth/types';
+import { LoginRequest } from '../../auth/types';
 import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class DataService {
 	}
 
 	getUsernameFromToken(): any {
-		const username: User = jwtDecode(this.jwtToken);
+		const username: LoginRequest = jwtDecode(this.jwtToken);
 		return username.username;
 	}
 }

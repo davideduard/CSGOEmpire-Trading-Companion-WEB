@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js,ts}"],
   theme: {
     colors: {
+      'errorRed': {
+        DEFAULT: '#f44336'
+      },
       'green': {
         DEFAULT: '#00AE58'
       },

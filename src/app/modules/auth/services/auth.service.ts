@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthRepository } from '../repositories';
 import { Observable } from 'rxjs';
-import { User } from '../types';
+import { LoginRequest, RegisterRequest, RegisterResponse } from '../types';
 import { LoginResponse } from '../types/login-response.type';
 
 @Injectable({
@@ -10,8 +10,12 @@ import { LoginResponse } from '../types/login-response.type';
 export class AuthService {
 	constructor(private authRepository: AuthRepository) {}
 
-	public login(username: string, password: string): Observable<LoginResponse> {
-		return this.authRepository.login(username, password);
+	public login(loginUser: LoginRequest): Observable<LoginResponse> {
+		return this.authRepository.login(loginUser);
+	}
+
+	public register(registerUser: RegisterRequest): Observable<RegisterResponse> {
+		return this.authRepository.register(registerUser);
 	}
 
 	public isLoggedIn(): boolean {
