@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../types';
+import { LoginRequest, RegisterRequest, RegisterResponse } from '../types';
 import { LoginResponse } from '../types/login-response.type';
 
 @Injectable({
@@ -12,11 +12,17 @@ export class AuthRepository {
 
 	constructor(private httpClient: HttpClient) {}
 
-	public login(username: string, password: string): Observable<LoginResponse> {
-		const requestData = { username: username, password: password };
+	public login(loginUser: LoginRequest): Observable<LoginResponse> {
 		return this.httpClient.post<LoginResponse>(
 			`${this.apiUrl}/login`,
-			requestData
+			loginUser
+		);
+	}
+
+	public register(registerUser: RegisterRequest): Observable<RegisterResponse> {
+		return this.httpClient.post<RegisterResponse>(
+			`${this.apiUrl}/register`,
+			registerUser
 		);
 	}
 

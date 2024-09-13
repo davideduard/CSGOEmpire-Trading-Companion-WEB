@@ -9,7 +9,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 	imports: [CommonModule, MatButtonModule, MatProgressSpinnerModule],
 	template: `
 		<div class="w-full">
-			<button mat-flat-button>
+			<button mat-flat-button [type]="type">
 				<mat-spinner
 					*ngIf="isLoading"
 					diameter="20"
@@ -24,4 +24,5 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 export class FlatButtonComponent {
 	@Input() label: string = '';
 	@Input() isLoading: boolean = false;
+	@Input() type: string = 'button';
 }

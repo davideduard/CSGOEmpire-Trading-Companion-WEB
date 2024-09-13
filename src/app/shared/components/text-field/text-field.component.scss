@@ -26,3 +26,23 @@
 ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
   @apply border-0 #{!important};
 }
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  @apply w-0 h-0 #{!important}
+}
+
+::ng-deep .mat-mdc-form-field-error {
+  @apply pl-4 pt-2 pr-4 pb-0 text-justify inline-flex #{!important}
+}
+
+::ng-deep .mdc-text-field--filled:is(.mdc-text-field--invalid) {
+  @apply bg-transparent border-2 border-errorRed rounded-xl #{!important}
+}
+
+::ng-deep .mdc-text-field--filled:is(.mdc-text-field--invalid) .mat-mdc-floating-label.mdc-floating-label {
+  @apply text-errorRed opacity-100 font-primary #{!important} ;
+}
+
+::ng-deep .mdc-line-ripple::before {
+  @apply border-transparent #{!important}
+}
