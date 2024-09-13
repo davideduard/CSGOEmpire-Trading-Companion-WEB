@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services';
-import { User } from '../../types';
+import { LoginRequest } from '../../types';
 import { LoginResponse } from '../../types/login-response.type';
 import { Router } from '@angular/router';
 
@@ -23,9 +23,9 @@ export class LoginContainer {
 		private router: Router
 	) {}
 
-	public onLogin(user: User): void {
+	public onLogin(loginUser: LoginRequest): void {
 		this.isLoading = true;
-		this.authService.login(user.username, user.password).subscribe({
+		this.authService.login(loginUser).subscribe({
 			next: (response: LoginResponse) => {
 				if (response.token) {
 					const token = response.token;

@@ -9,6 +9,9 @@ module.exports = {
       'xl': '1900px'
     },
     colors: {
+      'errorRed': {
+        DEFAULT: '#f44336'
+      },
       'green': {
         DEFAULT: '#00AE58'
       },
