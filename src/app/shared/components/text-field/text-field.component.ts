@@ -43,7 +43,7 @@ export class TextFieldComponent implements ControlValueAccessor {
 	@Input() formControl!: FormControl;
 	@Input() errorMessage: string = '';
 
-	value: string = ''; // Holds the current value of the input
+	value: string = '';
 
 	writeValue(value: string): void {
 		this.value = value ? value : '';
