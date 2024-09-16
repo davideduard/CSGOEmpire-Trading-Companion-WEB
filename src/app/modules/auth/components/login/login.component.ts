@@ -23,7 +23,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 					<div class="w-56 mt-5">
 						<app-flat-button
-							label="Login"
+							label="Continue"
 							[isLoading]="isLoading"
 							type="submit"
 						></app-flat-button>

@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthService } from '../../services';
 import { LoginRequest } from '../../types';
-import { LoginResponse } from '../../types/login-response.type';
+import { LoginResponse } from '../../types';
 import { Router } from '@angular/router';
+import {
+	MatSnackBar,
+	MatSnackBarHorizontalPosition,
+	MatSnackBarVerticalPosition
+} from '@angular/material/snack-bar';
 
 @Component({
 	selector: 'app-login-container',
@@ -18,6 +23,11 @@ import { Router } from '@angular/router';
 })
 export class LoginContainer {
 	isLoading: boolean = false;
+	horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+	verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+
+	private _snackBar = inject(MatSnackBar);
+
 	constructor(
 		private authService: AuthService,
 		private router: Router
@@ -35,7 +45,10 @@ export class LoginContainer {
 				}
 			},
 			error: err => {
-				console.log('err');
+				this._snackBar.open(err.error, 'Close', {
+					horizontalPosition: this.horizontalPosition,
+					verticalPosition: this.verticalPosition
+				});
 				this.isLoading = false;
 			}
 		});

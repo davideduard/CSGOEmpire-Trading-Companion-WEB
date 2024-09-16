@@ -12,6 +12,7 @@ import { FlatButtonComponent } from '../../shared/components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutContainer } from './containers';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
 	declarations: [...fromComponents.components, ...fromContainers.containers],
@@ -24,6 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
 		FlatButtonComponent,
 		FormsModule,
 		MatIconModule,
+		MatSnackBarModule,
 		ReactiveFormsModule
 	]
 })
