@@ -1,35 +1,35 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LoginRequest } from '../../types';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
 	selector: 'app-login',
 	template: ` <app-auth-layout>
 		<div class="flex flex-col gap-16 items-center" id="form-fields">
 			<h1 class="text-white text-3xl tracking-wide font-primary">Log in</h1>
-			<div class="w-96 flex flex-col items-center gap-7">
-				<app-text-field
-					#usernameField
-					[(ngModel)]="username"
-					label="username"
-					name="username"
-				></app-text-field>
 
-				<app-text-field
-					[(ngModel)]="password"
-					label="password"
-					type="password"
-					name="password"
-				></app-text-field>
+			<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+				<div class="w-96 flex flex-col items-center gap-7">
+					<app-text-field
+						label="username or email"
+						[formControl]="usernameControl"
+					></app-text-field>
 
-				<div class="w-56 mt-5">
-					<app-flat-button
-						label="Login"
-						[isLoading]="isLoading"
-						(click)="onLogin()"
-						(keyup.enter)="onLogin()"
-					></app-flat-button>
+					<app-text-field
+						label="password"
+						type="password"
+						[formControl]="passwordControl"
+					></app-text-field>
+
+					<div class="w-56 mt-5">
+						<app-flat-button
+							label="Login"
+							[isLoading]="isLoading"
+							type="submit"
+						></app-flat-button>
+					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 
 		<p
@@ -47,8 +47,13 @@ import { LoginRequest } from '../../types';
 	styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-	username: string = '';
-	password: string = '';
+	usernameControl = new FormControl('');
+	passwordControl = new FormControl('');
+
+	loginForm = new FormGroup({
+		username: this.usernameControl,
+		password: this.passwordControl
+	});
 
 	@Input() isLoading: boolean = false;
 	@Output() loginRequested: EventEmitter<LoginRequest> =
@@ -56,9 +61,11 @@ export class LoginComponent {
 	@Output() registerRequested: EventEmitter<void> = new EventEmitter<void>();
 
 	onLogin(): void {
+		this.loginForm.markAllAsTouched();
+
 		this.loginRequested.emit({
-			username: this.username,
-			password: this.password
+			username: this.usernameControl.value!,
+			password: this.passwordControl.value!
 		});
 	}
 
