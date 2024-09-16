@@ -3,7 +3,7 @@
 }
 
 ::ng-deep .mat-mdc-unelevated-button:not(:disabled) {
-  @apply bg-yellow rounded-lg font-bold font-primary text-sm #{!important}
+  @apply bg-yellow rounded-lg font-primary font-bold text-sm #{!important}
 }
 
 ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
