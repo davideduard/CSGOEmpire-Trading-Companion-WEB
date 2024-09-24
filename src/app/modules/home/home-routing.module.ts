@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
 	ImportDataContainer,
+	ProfilePageContainer,
 	StatsPageContainer,
 	TradeHistoryContainer
 } from './containers';
+import { PageNotFoundComponent } from '../../shared/components';
 
 const routes: Routes = [
 	{
@@ -23,6 +25,10 @@ const routes: Routes = [
 	{
 		path: 'history',
 		component: TradeHistoryContainer
+	},
+	{
+		path: 'profile',
+		component: ProfilePageContainer
 	},
 	{
 		path: '**',

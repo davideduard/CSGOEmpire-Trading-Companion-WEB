@@ -1,11 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DropDownMenuComponent } from '../drop-down-menu/drop-down-menu.component';
 
 @Component({
 	selector: 'app-profile-picture',
-	standalone: true,
-	imports: [CommonModule, DropDownMenuComponent],
 	template: `
 		<div>
 			<div class="profile" (click)="toggleMenu()">{{ profileInitials }}</div>

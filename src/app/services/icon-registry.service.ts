@@ -18,5 +18,12 @@ export class IconRegistryService {
 				'/assets/icons/logout.svg'
 			)
 		);
+
+		this.matIconRegistry.addSvgIcon(
+			'profile',
+			this.domSanitizer.bypassSecurityTrustResourceUrl(
+				'/assets/icons/profile.svg'
+			)
+		);
 	}
 }

@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 	template: `
 		<button (click)="onLogout()">
 			<mat-icon svgIcon="logout" class="scale-[0.95]"></mat-icon>
-			<span>Logout</span>
+			<span class="w-14">Logout</span>
 		</button>
 	`,
 	styleUrls: ['./logout.component.scss']

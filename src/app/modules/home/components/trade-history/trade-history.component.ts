@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-trade-history',
-	template: ` <app-nav-bar> </app-nav-bar> `,
+	template: ` <app-nav-bar [username]="username"> </app-nav-bar> `,
 	styleUrls: ['./trade-history.component.scss']
 })
-export class TradeHistoryComponent {}
+export class TradeHistoryComponent {
+	@Input() username: string = '';
+}

@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-import-data',
-	template: ` <app-nav-bar></app-nav-bar> `,
+	template: ` <app-nav-bar [username]="username"></app-nav-bar> `,
 	styleUrls: ['./import-data.component.scss']
 })
-export class ImportDataComponent {}
+export class ImportDataComponent {
+	@Input() username: string = '';
+}

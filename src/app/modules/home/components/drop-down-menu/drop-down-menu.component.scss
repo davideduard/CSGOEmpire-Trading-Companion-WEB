@@ -26,3 +26,7 @@
 .menu-last-element {
   @apply rounded-b-xl
 }
+
+a {
+  @apply font-primary text-lg flex items-center justify-between w-24
+}

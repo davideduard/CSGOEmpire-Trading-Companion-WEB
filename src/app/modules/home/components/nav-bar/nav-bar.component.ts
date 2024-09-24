@@ -1,17 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ProfilePictureComponent } from '../profile-picture/profile-picture.component';
 
 @Component({
 	selector: 'app-nav-bar',
-	standalone: true,
-	imports: [
-		CommonModule,
-		RouterLink,
-		RouterLinkActive,
-		ProfilePictureComponent
-	],
 	template: `
 		<nav class="nav-bar">
 			<ul class="nav-list">
