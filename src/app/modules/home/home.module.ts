@@ -9,6 +9,7 @@ import { AuthModule } from '../auth/auth.module';
 import { MatIconModule } from '@angular/material/icon';
 import { CardComponent } from '../../shared/components';
 
+import { HomeLayoutComponent } from '../../layouts';
 @NgModule({
 	declarations: [...fromComponents.components, ...fromContainers.containers],
 
@@ -17,7 +18,8 @@ import { CardComponent } from '../../shared/components';
 		HomeRoutingModule,
 		AuthModule,
 		MatIconModule,
-		CardComponent
+		CardComponent,
+    HomeLayoutComponent
 	]
 })
 export class HomeModule {}
