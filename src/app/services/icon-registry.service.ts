@@ -39,5 +39,24 @@ export class IconRegistryService {
 				'/assets/icons/profile.svg'
 			)
 		);
+
+		this.matIconRegistry.addSvgIcon(
+			'edit',
+			this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/edit.svg')
+		);
+
+		this.matIconRegistry.addSvgIcon(
+			'verified',
+			this.domSanitizer.bypassSecurityTrustResourceUrl(
+				'/assets/icons/verified.svg'
+			)
+		);
+
+		this.matIconRegistry.addSvgIcon(
+			'camera',
+			this.domSanitizer.bypassSecurityTrustResourceUrl(
+				'/assets/icons/camera.svg'
+			)
+		);
 	}
 }

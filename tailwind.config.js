@@ -10,7 +10,8 @@ module.exports = {
     },
     colors: {
       'errorRed': {
-        DEFAULT: '#f44336'
+        DEFAULT: '#f44336',
+        darker: '#A23B34'
       },
       'green': {
         DEFAULT: '#00AE58'

@@ -7,7 +7,12 @@ import * as fromComponents from './components';
 import * as fromContainers from './containers';
 import { AuthModule } from '../auth/auth.module';
 import { MatIconModule } from '@angular/material/icon';
-import { CardComponent } from '../../shared/components';
+import {
+	CardComponent,
+	CardInputComponent,
+	FlatButtonComponent,
+	TextFieldComponent
+} from '../../shared/components';
 
 import { HomeLayoutComponent } from '../../layouts';
 @NgModule({
@@ -19,7 +24,10 @@ import { HomeLayoutComponent } from '../../layouts';
 		AuthModule,
 		MatIconModule,
 		CardComponent,
-    HomeLayoutComponent
+		HomeLayoutComponent,
+		TextFieldComponent,
+		CardInputComponent,
+		FlatButtonComponent
 	]
 })
 export class HomeModule {}

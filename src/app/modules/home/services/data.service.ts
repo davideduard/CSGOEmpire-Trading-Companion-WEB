@@ -6,22 +6,23 @@ import { jwtDecode } from 'jwt-decode';
 	providedIn: 'root'
 })
 export class DataService {
-	private readonly jwtToken: string = '';
+	constructor() {}
 
-	constructor() {
-		this.jwtToken = this.getJWTToken();
-	}
-
-	private getJWTToken(): string {
+	private getJWTToken(): string | null {
 		const token: string | null = localStorage.getItem('auth-token');
 		if (token) {
 			return token;
 		}
-		return '';
+		return null;
 	}
 
 	getUsernameFromToken(): any {
-		const username: LoginRequest = jwtDecode(this.jwtToken);
+		const token: string | null = this.getJWTToken();
+		if (!token) {
+			return null;
+		}
+
+		const username: LoginRequest = jwtDecode(token);
 		return username.username;
 	}
 }

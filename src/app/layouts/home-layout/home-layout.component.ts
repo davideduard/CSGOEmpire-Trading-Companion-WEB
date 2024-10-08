@@ -24,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
 				</div>
 			</div>
 			<ng-content select="app-nav-bar"></ng-content>
+			<ng-content></ng-content>
 		</div>
 	`,
 	imports: [MatIconModule],

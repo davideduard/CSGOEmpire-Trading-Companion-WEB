@@ -1,3 +1,60 @@
 .profile-page-container {
-  @apply w-full h-[87vh] flex flex-col items-center justify-between p-10
+  @apply w-full h-[87vh] flex flex-col gap-12 pl-[34rem] xl:pl-[42rem]
 }
+
+.profile-fields-placeholder {
+  @apply w-[60vw] h-[85vh] flex flex-col items-center gap-20
+}
+
+.profile-picture-row {
+  @apply w-full flex flex-row gap-12 items-center
+}
+
+.username-placeholder {
+  @apply flex flex-row items-center gap-4
+}
+
+.username {
+  @apply text-4xl font-primary font-semibold text-white
+}
+
+.email-placeholder {
+  @apply flex flex-row items-center gap-1
+}
+
+.email {
+  @apply text-lg font-primary font-semibold text-white opacity-30
+}
+
+.profile-picture {
+  @apply w-24 h-24 rounded-full bg-darkBlue-light flex items-center justify-center hover:cursor-pointer hover:bg-darkBlue-light
+}
+
+.card-content {
+  @apply flex flex-col gap-4 w-full
+}
+
+.input {
+  @apply flex flex-row gap-10 items-center
+}
+
+.inputs-placeholder {
+  @apply flex flex-row gap-10 w-[80%]
+}
+
+.token-row {
+  @apply h-32 w-full
+}
+
+.warning {
+  @apply text-base text-errorRed-darker font-primary
+}
+
+.password-row {
+  @apply w-full h-32
+}
+
+.details-row {
+  @apply w-full h-32
+}
+

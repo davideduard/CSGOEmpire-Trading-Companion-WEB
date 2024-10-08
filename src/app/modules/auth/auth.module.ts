@@ -9,7 +9,7 @@ import * as fromContainers from './containers';
 import { AuthLayoutComponent } from '../../layouts';
 import { TextFieldComponent } from '../../shared/components';
 import { FlatButtonComponent } from '../../shared/components';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutContainer } from './containers';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -26,6 +26,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 		FormsModule,
 		MatIconModule,
 		MatSnackBarModule,
+		ReactiveFormsModule
 	]
 })
 export class AuthModule {}

@@ -20,8 +20,6 @@ export class RoutingService {
 					this.prevUrl = this.currentUrl;
 				}
 				this.currentUrl = event.url;
-				console.log('prev:', this.prevUrl);
-				console.log('curr:', this.currentUrl);
 			}
 		});
 	}

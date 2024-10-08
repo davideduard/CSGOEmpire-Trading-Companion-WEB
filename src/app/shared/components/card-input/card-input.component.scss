@@ -1,0 +1,11 @@
+.input-placeholder {
+  @apply w-full relative
+}
+
+.card-input {
+  @apply w-full h-10 p-3 pl-6 font-primary text-lg bg-darkBlue-lightest caret-yellow text-white focus:outline-0 placeholder-white placeholder-opacity-30;
+}
+
+.input-title {
+  @apply text-white font-primary text-base font-semibold opacity-30 pb-3
+}
