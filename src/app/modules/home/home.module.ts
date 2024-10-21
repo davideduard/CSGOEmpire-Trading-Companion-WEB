@@ -15,6 +15,7 @@ import {
 } from '../../shared/components';
 
 import { HomeLayoutComponent } from '../../layouts';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 @NgModule({
 	declarations: [...fromComponents.components, ...fromContainers.containers],
 
@@ -27,7 +28,8 @@ import { HomeLayoutComponent } from '../../layouts';
 		HomeLayoutComponent,
 		TextFieldComponent,
 		CardInputComponent,
-		FlatButtonComponent
+		FlatButtonComponent,
+		MatDialogModule
 	]
 })
 export class HomeModule {}

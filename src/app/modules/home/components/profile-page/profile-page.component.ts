@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpDialogComponent } from '../../../../shared/components';
 
 @Component({
 	selector: 'app-profile-page',
@@ -36,20 +38,7 @@ import { Component, Input } from '@angular/core';
                   <div class="inputs-placeholder">
                     <app-card-input class="w-full" [disabled]="true" placeholder="15e7****************************"></app-card-input>
                   </div>
-                  <app-flat-button label="Change API" class="w-44"></app-flat-button>
-                </div>
-              </div>
-            </app-card>
-          </div>
-          <div class="password-row">
-            <app-card title="Change Password">
-              <div class="card-content">
-                <div class="input">
-                  <div class="inputs-placeholder">
-                    <app-card-input class="w-full" inputTitle="New Password" type="password"></app-card-input>
-                    <app-card-input class="w-full" inputTitle="Confirm Password" type="password"></app-card-input>
-                  </div>
-                  <app-flat-button label="Change Password" class="w-44 pt-9"></app-flat-button>
+                  <app-flat-button label="Change API" class="w-44" (click)="openDialog()"></app-flat-button>
                 </div>
               </div>
             </app-card>
@@ -67,6 +56,19 @@ import { Component, Input } from '@angular/core';
               </div>
             </app-card>
           </div>
+          <div class="password-row">
+            <app-card title="Change Password">
+              <div class="card-content">
+                <div class="input">
+                  <div class="inputs-placeholder">
+                    <app-card-input class="w-full" inputTitle="New Password" type="password"></app-card-input>
+                    <app-card-input class="w-full" inputTitle="Confirm Password" type="password"></app-card-input>
+                  </div>
+                  <app-flat-button label="Change Password" class="w-44 pt-9"></app-flat-button>
+                </div>
+              </div>
+            </app-card>
+          </div>
         </div>
 			</div>
 		</app-home-layout>
@@ -78,8 +80,18 @@ export class ProfilePageComponent {
 	profileInitials: string = '';
 	@Input() username: string = '';
 
+	constructor(public dialog: MatDialog) {}
+
 	private generateInitials(): void {
 		this.profileInitials = this.username.charAt(0).toUpperCase();
+	}
+
+	openDialog(): void {
+		let dialogRef = this.dialog.open(PopUpDialogComponent, {});
+
+		dialogRef.afterClosed().subscribe(result => {
+			//this.animal = result;
+		});
 	}
 
 	ngOnInit(): void {

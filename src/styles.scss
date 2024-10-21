@@ -34,11 +34,16 @@ $trading-companion-web-theme: mat.define-light-theme((
 @include mat.all-component-themes($trading-companion-web-theme);
 
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: Nunito;
+  src: url("/assets/fonts/Nunito.ttf");
+}
 
 html {
   height: 100%;

@@ -1,0 +1,36 @@
+::ng-deep .mat-mdc-dialog-surface {
+  @apply bg-darkBlue-light text-white font-primary w-[30rem] rounded-xl text-center p-2 #{!important}
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content {
+  @apply font-primary text-white text-sm #{!important}
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__title {
+  @apply font-primary text-2xl text-white mb-5 #{!important}
+}
+
+.text-container {
+  @apply flex flex-col gap-5
+}
+
+.dialog-data {
+  @apply flex flex-col gap-5
+}
+
+.input-placeholder {
+  @apply flex flex-col gap-8
+}
+
+.buttons-placeholder {
+  @apply flex flex-row justify-between pl-5 pr-5
+}
+
+#revoke-button {
+  ::ng-deep .mat-mdc-unelevated-button:not(:disabled) {
+    @apply bg-errorRed #{!important}
+  }
+}
+
+
+
